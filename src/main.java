@@ -3,6 +3,8 @@ public class main {
 	public static String[] hierba = { "Maria Juana", "Hierba de los bosques", "La seta feliz", "El oro verde" };
 	public static String[] origen = { "Mexico", "Andorra", "Marrueco", "Palestina" };
 	public static double[] precio = { 1.70, 4.20, 2.47, 1.33 };
+	public static String[] productos = new String[4];
+	public static int[] cantidades = new int[4];
 
 	// Variables publicas extra que considereis
 
@@ -50,8 +52,26 @@ public class main {
 				opcion = scan.nextLine();
 			}
 		
-		if(opcion.equals("a")) {
-				
+		if(opcion.equalsIgnoreCase("a")) {
+			buscarProd.buscProdNom(hierba);
+		}
+		else if(opcion.equalsIgnoreCase("b")) {
+			buscarProd.buscProdOrigen(origen);
+		}
+		else if(opcion.equalsIgnoreCase("c")) {
+			buscarProd.buscProdMayMen(precio);
+		}
+		else if(opcion.equalsIgnoreCase("d")) {
+			buscarProd.buscProdMenMay(precio);
+		}
+		else if(opcion.equalsIgnoreCase("e")) {
+			buscarProd.buscProdSelect(hierba, cantidades, productos);
+		}
+		else if(opcion.equalsIgnoreCase("e")) {
+			buscarProd.buscProdElim(hierba, precio, productos);
+		}
+		else if(opcion.equalsIgnoreCase("f")) {
+			buscarProd.buscProdFin(hierba, cantidades, precio, productos);
 		}
 		
 		System.out.println("Usuario selecciona buscar por nombre");
