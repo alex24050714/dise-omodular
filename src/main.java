@@ -11,6 +11,10 @@ public class main {
 
 		System.out.println("Buenos dias! Que quieres hacer hoy?");
 
+		
+		System.out.println("Elige en nuestro menú una opción del 1 al 8: ");
+		
+		
 		System.out.println("Usuario selecciona buscar por nombre");
 		nombre = "Juana";
 		// Codigo para buscar por nombre
