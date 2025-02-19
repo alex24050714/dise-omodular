@@ -35,8 +35,8 @@ public class main {
 		System.out.println("Elige en nuestro menú una opción del 1 al 8: ");
 		String opcion = scan.nextLine();
 		
-			while(!opcion.equals("a") || !opcion.equals("b") || !opcion.equals("c") || !opcion.equals("d") || !opcion.equals("e") || !opcion.equals("f") || 
-					!opcion.equals("g") || !opcion.equals("h")) {
+			while(!(opcion.equals("a") || opcion.equals("b") || opcion.equals("c") || opcion.equals("d") || opcion.equals("e") || opcion.equals("f") || 
+					opcion.equals("g") || opcion.equals("h"))) {
 				
 				System.out.println("Vuelve a repetir tu eleccion: ");
 				System.out.println("a. Buscar producto por nombre. ");
@@ -71,44 +71,13 @@ public class main {
 			buscarProd.buscProdElim(hierba, precio, productos);
 		}
 		else if(opcion.equalsIgnoreCase("f")) {
-			buscarProd.buscProdFin(hierba, cantidades, precio, productos);
+			buscarProd.buscProdFin(hierba, precio, cantidades, productos);
 		}
-		
-		System.out.println("Usuario selecciona buscar por nombre");
-		nombre = "Juana";
-		// Codigo para buscar por nombre
-
-		System.out.println("Usuario selecciona buscar por origen");
-		lugar = "Andorra";
-		// Codigo para buscar por origen
-
-		System.out.println("Usuario selecciona ordenar por precio de menor a mayor");
-		// Codigo para ordenar de mayor a menor precio
-
-		System.out.println("Usuario selecciona ordenar por precio de menor a mayor");
-		// Codigo para ordenar de mayor a menor precio
-
-		System.out.println("Usuario selecciona varios productos para comprar");
-		// Codigo para seleccionar primer producto
-		nombre = "Hierba de los bosques";
-		cantidad = 3;
-
-		// Codigo para seleccionar segundo producto
-		nombre = "El oro verde";
-		cantidad = 1;
-
-		// Codigo para seleccionar tercer producto
-		nombre = "La seta feliz";
-		cantidad = 2.5;
-		
-		System.out.println("Usuario elimina el segundo elemento de su carrito");
-		// Codigo para eliminar elemento del carrito
-
-		System.out.println("Usuario finaliza la compra");
-		// Codigo para finalizar la compra y que salga el total de la compra
-		
+		else if(opcion.equalsIgnoreCase("g")) {
+			seleccion = false;
+			break;
+		}
+				
 		}
 	}
-	
-	//Funciones extra que considereis necesarias
 }
