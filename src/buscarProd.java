@@ -44,15 +44,34 @@ public class buscarProd {
 		System.out.println("Tu producto procedente de " + loc);
 	}
 	
-	public static void buscProdMayMen (double [] precio) {
-				
-		for(int i = 0; i < precios1.length; i++) {
-			
-		}
+	public static void buscProdMayMen (double [] precio, String [] hierba) {
+			double depositar = 0;
+			for (int i = 0; i < precio.length; i++) {
+				for (int j = i+1; j < precio.length; j++) {
+					if (precio[i] < precio[j]) {
+						double mayor = precio[i];
+						precio[i] = precio[j];
+						precio[j] = mayor;
+					}
+				}
+				depositar = precio[i];
+			}
+			System.out.println("Aqui esta nuestro catalogo de hierbas ordenado de mayor a menor: ");
+			System.out.println(depositar);
 	}
 	
 	public static void buscProdMenMay (double [] precio) {
-		
+		for (int i = 0; i < precio.length; i++) {
+			for (int j = i+1; j < precio.length; j++) {
+				if (precio[i] > precio[j]) {
+					double mayor = precio[i];
+					precio[i] = precio[j];
+					precio[j] = mayor;
+				}
+			}
+			System.out.println(precio[i]);
+		}
+
 	}
 	
 	public static void buscProdSelect (String [] hierba, int [] cantidades, String [] productos) {
