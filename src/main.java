@@ -17,7 +17,7 @@ public class main {
 		
 		System.out.println("Buenos dias! Que quieres hacer hoy?");
 
-		while (seleccion == true) {
+		while (seleccion) {
 			
 		System.out.println("Que quieres hacer?: ");
 		System.out.println("a. Buscar producto por nombre. ");

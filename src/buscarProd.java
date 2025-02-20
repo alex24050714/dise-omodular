@@ -85,16 +85,29 @@ public class buscarProd {
 		boolean seguir = true;
 		int contador = 0;
 		
-		while (seguir == true) {
+		while (seguir) {
 			System.out.println("Que productos quieres seleccionar: ");
 			String selec = scan.nextLine();
 			
-			
+			boolean plantica = false;
 			for (int i = 0; i < hierba.length; i++) {
-				while(!selec.equalsIgnoreCase(hierba[i])) {
-					System.out.println("No existe esta planta en nuestros huerticos, repite tu eleccion: ");
-					selec = scan.nextLine();
-				}										
+				if(selec.equalsIgnoreCase(hierba[i])) {
+					plantica = true;
+					break;
+				}	
+			}
+			while(!plantica) {
+				System.out.println("No existe esta planta en nuestros huerticos, repite tu eleccion: ");
+				selec = scan.nextLine();
+				plantica = false;
+				
+				for(int i = 0; i < hierba.length; i++) {
+					if(selec.equalsIgnoreCase(hierba[i])) {
+						plantica = true;
+						break;
+					}
+				}
+			}
 					productos[contador] = selec;
 					
 					System.out.println("Cantidad");
@@ -102,13 +115,15 @@ public class buscarProd {
 					scan.nextLine();
 					
 					contador++;
-			}
-			System.out.println("Quiere alguna plantita mas?: ");
-			String planta = scan.nextLine();
-			if (planta.equalsIgnoreCase("no")) {
-				seguir = false;
-			}
+				
+				System.out.println("Quiere alguna plantita mas?: ");
+				String planta = scan.nextLine();
+				if (planta.equalsIgnoreCase("no")) {
+					seguir = false;
+				}
 		}
+		
+		
 	}
 	
 	public static void buscProdElim (String [] hierba, double [] precio, String [] productos) {
