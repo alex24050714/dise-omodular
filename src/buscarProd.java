@@ -45,7 +45,10 @@ public class buscarProd {
 	}
 	
 	public static void buscProdMayMen (double [] precio) {
-		
+				
+		for(int i = 0; i < precios1.length; i++) {
+			
+		}
 	}
 	
 	public static void buscProdMenMay (double [] precio) {
