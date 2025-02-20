@@ -108,22 +108,36 @@ public class buscarProd {
 					}
 				}
 			}
-					productos[contador] = selec;
-					
-					System.out.println("Cantidad");
-					cantidades[contador] = scan.nextInt();
-					scan.nextLine();
-					
-					contador++;
 				
+			boolean existe = false;
+			for (int i = 0; i < contador; i++) {
+				if (productos[i].equalsIgnoreCase(selec)) {
+					cantidades[i] += scan.nextInt();
+					scan.nextLine();
+					existe = true;
+					break;
+				} 
+			}
+			
+			if (!existe) {
+				productos[contador] = selec;
+				System.out.println("Cantidad: ");
+				cantidades[contador] = scan.nextInt();
+				scan.nextLine();
+				contador++;
+			}
+			
 				System.out.println("Quiere alguna plantita mas?: ");
 				String planta = scan.nextLine();
 				if (planta.equalsIgnoreCase("no")) {
 					seguir = false;
 				}
+		
+			}
+		System.out.println("Estas son las hierbas que has seleccionado de nuestra exquisita seleccion: ");
+		for(int i = 0; i < contador; i++) {
+			System.out.println("Hierbica: " + productos[i] + " " + cantidades[i]);
 		}
-		
-		
 	}
 	
 	public static void buscProdElim (String [] hierba, double [] precio, String [] productos) {

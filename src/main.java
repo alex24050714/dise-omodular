@@ -67,13 +67,13 @@ public class main {
 		else if(opcion.equalsIgnoreCase("e")) {
 			buscarProd.buscProdSelect(hierba, cantidades, productos);
 		}
-		else if(opcion.equalsIgnoreCase("e")) {
+		else if(opcion.equalsIgnoreCase("f")) {
 			buscarProd.buscProdElim(hierba, precio, productos);
 		}
-		else if(opcion.equalsIgnoreCase("f")) {
+		else if(opcion.equalsIgnoreCase("g")) {
 			buscarProd.buscProdFin(hierba, precio, cantidades, productos);
 		}
-		else if(opcion.equalsIgnoreCase("g")) {
+		else if(opcion.equalsIgnoreCase("h")) {
 			seleccion = false;
 		}
 				
