@@ -45,37 +45,70 @@ public class buscarProd {
 	}
 	
 	public static void buscProdMayMen (double [] precio, String [] hierba) {
-			double depositar = 0;
 			for (int i = 0; i < precio.length; i++) {
 				for (int j = i+1; j < precio.length; j++) {
 					if (precio[i] < precio[j]) {
 						double mayor = precio[i];
 						precio[i] = precio[j];
 						precio[j] = mayor;
+		
+						String nom = hierba[i];
+						hierba[i] = hierba[j];
+						hierba[j] = nom;
 					}
 				}
-				depositar = precio[i];
+				System.out.println(hierba[i] + ": "+ precio[i]);
 			}
-			System.out.println("Aqui esta nuestro catalogo de hierbas ordenado de mayor a menor: ");
-			System.out.println(depositar);
+			System.out.println("Estos son nuestros precios ordenados de mayor a menor.");
 	}
 	
-	public static void buscProdMenMay (double [] precio) {
+	public static void buscProdMenMay (double [] precio, String [] hierba) {
 		for (int i = 0; i < precio.length; i++) {
 			for (int j = i+1; j < precio.length; j++) {
 				if (precio[i] > precio[j]) {
 					double mayor = precio[i];
 					precio[i] = precio[j];
 					precio[j] = mayor;
+					
+					String nom = hierba[i];
+					hierba[i] = hierba[j];
+					hierba[j] = nom;
 				}
 			}
-			System.out.println(precio[i]);
+			System.out.println(hierba[i] + ": "+ precio[i]);
 		}
-
+		System.out.println("Estos son nuestros precios ordenados de menor a mayor.");
 	}
 	
 	public static void buscProdSelect (String [] hierba, int [] cantidades, String [] productos) {
+		Scanner scan = new Scanner (System.in);
+		boolean seguir = true;
+		int contador = 0;
 		
+		while (seguir == true) {
+			System.out.println("Que productos quieres seleccionar: ");
+			String selec = scan.nextLine();
+			
+			
+			for (int i = 0; i < hierba.length; i++) {
+				while(!selec.equalsIgnoreCase(hierba[i])) {
+					System.out.println("No existe esta planta en nuestros huerticos, repite tu eleccion: ");
+					selec = scan.nextLine();
+				}										
+					productos[contador] = selec;
+					
+					System.out.println("Cantidad");
+					cantidades[contador] = scan.nextInt();
+					scan.nextLine();
+					
+					contador++;
+			}
+			System.out.println("Quiere alguna plantita mas?: ");
+			String planta = scan.nextLine();
+			if (planta.equalsIgnoreCase("no")) {
+				seguir = false;
+			}
+		}
 	}
 	
 	public static void buscProdElim (String [] hierba, double [] precio, String [] productos) {

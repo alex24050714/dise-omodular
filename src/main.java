@@ -62,7 +62,7 @@ public class main {
 			buscarProd.buscProdMayMen(precio, hierba);
 		}
 		else if(opcion.equalsIgnoreCase("d")) {
-			buscarProd.buscProdMenMay(precio);
+			buscarProd.buscProdMenMay(precio, hierba);
 		}
 		else if(opcion.equalsIgnoreCase("e")) {
 			buscarProd.buscProdSelect(hierba, cantidades, productos);
