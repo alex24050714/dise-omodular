@@ -50,8 +50,12 @@ public class compraProd {
 					contador++;
 				}
 				
-					System.out.println("Quiere alguna plantita mas?: ");
+					System.out.println("Quiere alguna plantita mas? si/no: ");
 					String planta = scan.nextLine();
+					while(!planta.equalsIgnoreCase("si") && !planta.equalsIgnoreCase("no")) {
+						System.out.println("La eleccion tiene que ser si o no, no te motives fumeta: ");
+						planta = scan.nextLine();
+					}
 					if (planta.equalsIgnoreCase("no")) {
 						seguir = false;
 					}
@@ -71,22 +75,35 @@ public class compraProd {
 			String seleccion = scan.nextLine();
 			
 			for (int i = 0; i < productos.length; i++) {
-				if (productos[i].equalsIgnoreCase(seleccion) && productos[i] != null) {
+				if (productos[i] != null && productos[i].equalsIgnoreCase(seleccion)) {
 					productos[i] = null;
 					cantidades[i] = 0;
 					System.out.println("Producto eliminado");
 					eliminado = true;
 				}
 			}
-			if (eliminado == false) {
+			if (!eliminado) {
 				System.out.println("Producto no encontrado: ");
 			}
 			System.out.println();
 		}
 
 		public static void buscProdFin (String [] hierba, double [] precio, int [] cantidades, String [] productos) {
+			int productosFinal = 0;
+			double precioFinal = 0;
 			
+			for (int i = 0; i < productos.length; i++) {
+				if (productos[i] != null) {
+					productosFinal += cantidades[i];
+					for (int j = 0; j < hierba.length; j++) {
+						if (productos[i].equalsIgnoreCase(hierba[j])) {
+							precioFinal += precio[j] * cantidades[i];
+							break;
+						}
+					}
+				}
+			}
+			System.out.println("Esta es la cantidad de productos que has seleccionado agricultor: " + productosFinal);
+			System.out.println("Y este es el precio de tus planticas: " + precioFinal);
 		}
-
-		
 	}
