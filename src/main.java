@@ -65,13 +65,13 @@ public class main {
 			buscarProd.buscProdMenMay(precio, hierba);
 		}
 		else if(opcion.equalsIgnoreCase("e")) {
-			buscarProd.buscProdSelect(hierba, cantidades, productos);
+			compraProd.buscProdSelect(hierba, cantidades, productos);
 		}
 		else if(opcion.equalsIgnoreCase("f")) {
-			buscarProd.buscProdElim(cantidades, productos);
+			compraProd.buscProdElim(cantidades, productos);
 		}
 		else if(opcion.equalsIgnoreCase("g")) {
-			buscarProd.buscProdFin(hierba, precio, cantidades, productos);
+			compraProd.buscProdFin(hierba, precio, cantidades, productos);
 		}
 		else if(opcion.equalsIgnoreCase("h")) {
 			seleccion = false;
