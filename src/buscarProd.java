@@ -143,18 +143,23 @@ public class buscarProd {
 	
 	public static void buscProdElim (int[] cantidades, String [] productos) {
 		Scanner scan = new Scanner(System.in);
+		boolean eliminado = false;
+		
 		System.out.println("Que producto desea eliminar?: ");
 		String seleccion = scan.nextLine();
 		
 		for (int i = 0; i < productos.length; i++) {
-			if (productos[i].equalsIgnoreCase(seleccion)) {
+			if (productos[i].equalsIgnoreCase(seleccion) && productos[i] != null) {
 				productos[i] = null;
 				cantidades[i] = 0;
 				System.out.println("Producto eliminado");
-			}else if(!productos[i].equalsIgnoreCase(seleccion)) {
-				System.out.println("Producto eliminado");
+				eliminado = true;
 			}
 		}
+		if (eliminado == false) {
+			System.out.println("Producto no encontrado: ");
+		}
+		System.out.println();
 	}
 
 	public static void buscProdFin (String [] hierba, double [] precio, int [] cantidades, String [] productos) {
