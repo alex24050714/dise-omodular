@@ -108,12 +108,15 @@ public class buscarProd {
 					}
 				}
 			}
-				
+			
+			System.out.println("Cantidad: ");
+			int cantidad = scan.nextInt();
+			scan.nextLine();
+			
 			boolean existe = false;
 			for (int i = 0; i < contador; i++) {
 				if (productos[i].equalsIgnoreCase(selec)) {
-					cantidades[i] += scan.nextInt();
-					scan.nextLine();
+					cantidades[i] += cantidad;
 					existe = true;
 					break;
 				} 
@@ -121,9 +124,7 @@ public class buscarProd {
 			
 			if (!existe) {
 				productos[contador] = selec;
-				System.out.println("Cantidad: ");
-				cantidades[contador] = scan.nextInt();
-				scan.nextLine();
+				cantidades[contador] = cantidad;
 				contador++;
 			}
 			
@@ -140,8 +141,20 @@ public class buscarProd {
 		}
 	}
 	
-	public static void buscProdElim (String [] hierba, double [] precio, String [] productos) {
+	public static void buscProdElim (int[] cantidades, String [] productos) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Que producto desea eliminar?: ");
+		String seleccion = scan.nextLine();
 		
+		for (int i = 0; i < productos.length; i++) {
+			if (productos[i].equalsIgnoreCase(seleccion)) {
+				productos[i] = null;
+				cantidades[i] = 0;
+				System.out.println("Producto eliminado");
+			}else if(!productos[i].equalsIgnoreCase(seleccion)) {
+				System.out.println("Producto eliminado");
+			}
+		}
 	}
 
 	public static void buscProdFin (String [] hierba, double [] precio, int [] cantidades, String [] productos) {

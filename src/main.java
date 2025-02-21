@@ -68,7 +68,7 @@ public class main {
 			buscarProd.buscProdSelect(hierba, cantidades, productos);
 		}
 		else if(opcion.equalsIgnoreCase("f")) {
-			buscarProd.buscProdElim(hierba, precio, productos);
+			buscarProd.buscProdElim(cantidades, productos);
 		}
 		else if(opcion.equalsIgnoreCase("g")) {
 			buscarProd.buscProdFin(hierba, precio, cantidades, productos);
